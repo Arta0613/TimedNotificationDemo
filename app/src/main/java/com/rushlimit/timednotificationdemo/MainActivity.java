@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("RICHARD", "Notif");
                 intent.putExtra("GROUP", "SURVEY");
                 PendingIntent alarmIntent = PendingIntent.getBroadcast(MainActivity.this, (int) System.currentTimeMillis(), intent, 0);
-                // set for 30 seconds later
+                // set for x time later
                 alarmMgr.set(AlarmManager.RTC, Calendar.getInstance().getTimeInMillis() + 240000, alarmIntent);
                 getSharedPreferences("MAIN", MODE_PRIVATE).edit().putString("TIME", (Calendar.getInstance().getTimeInMillis() + 240000) + "").commit();
 

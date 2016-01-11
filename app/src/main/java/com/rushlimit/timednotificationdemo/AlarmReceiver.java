@@ -25,7 +25,7 @@ public class AlarmReceiver extends BroadcastReceiver {
             myintent.putExtra("RICHARD", "Notif");
             myintent.putExtra("GROUP", "SURVEY");
             PendingIntent alarmIntent = PendingIntent.getBroadcast(context, (int) System.currentTimeMillis(), myintent, 0);
-            // set for 30 seconds later
+            // set for x time from shared preferences later
             alarmMgr.set(AlarmManager.RTC, Long.parseLong(context.getSharedPreferences("MAIN", Context.MODE_PRIVATE).getString("TIME", "0")), alarmIntent);
         } else {
             NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
